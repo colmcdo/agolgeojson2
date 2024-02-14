@@ -27,12 +27,10 @@
           basemap: "arcgis/topographic" // basemap styles service
         });
         const geojsonLayer = new GeoJSONLayer({
-        //url: "MegaCities%20(1).geojson", 
-        url: "https://colmcdo.github.io/agolgeojson/MegaCities%20(1).geojson"
+        url: "MegaCities%20(1).geojson", 
+        //url: "https://colmcdo.github.io/agolgeojson/MegaCities%20(1).geojson"
         copyright: "CMM"
         });
-
-      console.log(geojsonLayer);
       
         const view = new MapView({
           map: map,
