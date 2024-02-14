@@ -26,10 +26,25 @@
         const map = new Map({
           basemap: "arcgis/topographic" // basemap styles service
         });
+        const renderer = {
+        type: "simple",
+        field: "mag",
+        symbol: {
+          type: "simple-marker",
+          color: "orange",
+          outline: {
+            color: "white"
+          }
+        }
+        
+      };
+
+        
         const geojsonLayer = new GeoJSONLayer({
         url: "MegaCities%20(1).geojson", 
         //url: "https://colmcdo.github.io/agolgeojson/MegaCities%20(1).geojson"
         copyright: "CMM"
+        renderer: renderer
         });
       
         const view = new MapView({
