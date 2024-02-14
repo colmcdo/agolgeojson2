@@ -26,7 +26,11 @@
         const map = new Map({
           basemap: "arcgis/topographic" // basemap styles service
         });
-
+        const geojsonLayer = new GeoJSONLayer({
+        url: MegaCities%20(1).geojson, // https://colmcdo.github.io/agolgeojson/MegaCities%20(1).geojson
+        copyright: "CMM"
+        });
+        
         const view = new MapView({
           map: map,
           center: [-118.805, 34.027], // Longitude, latitude
