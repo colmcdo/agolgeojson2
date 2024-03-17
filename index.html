@@ -19,7 +19,7 @@
     <script src="https://js.arcgis.com/4.28/"></script>
 
     <script>
-      require(["esri/config", "esri/Map", "esri/views/MapView", "esri/layers/GeoJSONLayer"], function(esriConfig, Map, MapView, GeoJSONLayer) {
+      require(["esri/config", "esri/Map", "esri/layers/GeoJSONLayer", "esri/views/MapView"], function(esriConfig, Map, GeoJSONLayer, MapView) {
 
         esriConfig.apiKey = "AAPK9decdd6558d24937ac6614a6238a4349xJI9Du-3z4SyrQbfMmyLq4QXJjnxMWHpXGYgRVkG2Zj30pXtLr7MOAzKvkUj6KeH";
 
@@ -37,19 +37,18 @@
         }
         
       };
-
-         const view = new MapView({
-          map: map,
-          center: [0, 0], // Longitude, latitude
-          zoom: 4, // Zoom level
-          container: "viewDiv", // Div element
-          layers: [geojsonLayer]
-        });
-        const geojsonLayer = new GeoJSONLayer({
-         // url: "MegaCities%20(1).geojson"
+const geojsonLayer = new GeoJSONLayer({
         url: "MegaCities.geojson",
         renderer: renderer
         });
+         const view = new MapView({
+          map: map,
+          center: [0, 0], // Longitude, latitude
+          zoom: 2, // Zoom level
+          container: "viewDiv", // Div element
+          layers: [geojsonLayer]
+        });
+        
       
        
       
